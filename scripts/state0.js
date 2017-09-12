@@ -12,7 +12,6 @@ demo.state0.prototype = {
   create: function(){
     game.physics.startSystem(Phaser.Physics.ARCADE);
     game.stage.backgroundColor = "#ffffff";
-    console.log("in state0");
     addChangeStateEventListeners();
     game.world.setBounds(0, 0, 2000, 1000);
     game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
@@ -23,7 +22,7 @@ demo.state0.prototype = {
     robot.scale.setTo(0.7, 0.7);
     game.physics.enable(robot);
     robot.body.collideWorldBounds = true;
-    robot.animations.add('walking', [2, 3, 0, 1]);
+    robot.animations.add('walking', [3, 0, 1, 2]);
 
     game.camera.follow(robot);
     game.camera.deadzone = new Phaser.Rectangle(centerX - 300, 0, 600, 1000);
@@ -58,6 +57,7 @@ demo.state0.prototype = {
 };
 
 function changeState(i, stateNum) {
+  console.log('state'+ stateNum);
   game.state.start('state' + stateNum);
 }
 
