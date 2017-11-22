@@ -58,6 +58,7 @@ demo.state0.prototype = {
 
 function changeState(i, stateNum) {
   console.log('state'+ stateNum);
+  console.log(i);
   game.state.start('state' + stateNum);
 }
 
@@ -76,4 +77,5 @@ function addChangeStateEventListeners(){
   addKeyCallback(Phaser.Keyboard.SEVEN, changeState, 7);
   addKeyCallback(Phaser.Keyboard.EIGHT, changeState, 8);
   addKeyCallback(Phaser.Keyboard.NINE, changeState, 9);
+  // addKeyCallback(Phaser.Keyboard.NINE, changeState, 9);
 };
